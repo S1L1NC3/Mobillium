@@ -4,4 +4,5 @@
     <string name="all">TÜMÜ</string>
     <string name="collections">KOLEKSİYONLAR</string>
     <string name="categories">KATEGORİLER</string>
+    <string name="contentDescription">content Description unutmadım lint yaptım :D</string>
 </resources>

@@ -1,10 +1,11 @@
 package com.dmd.mobillumandroidchallenge.models;
 
-import com.dmd.mobillumandroidchallenge.models.Cover;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Featured {
+import java.io.Serializable;
+
+public class Featured implements Serializable {
 
     @SerializedName("id")
     @Expose

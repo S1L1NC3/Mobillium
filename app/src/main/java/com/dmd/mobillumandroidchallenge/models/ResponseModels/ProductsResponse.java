@@ -5,18 +5,18 @@ import com.dmd.mobillumandroidchallenge.models.Product;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ProductsResponse extends BaseResponseObject {
-    public List<Product> getProducts() {
+    public ArrayList<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(ArrayList<Product> products) {
         this.products = products;
     }
 
     @SerializedName("products")
     @Expose
-    private List<Product> products;
+    private ArrayList<Product> products;
 }

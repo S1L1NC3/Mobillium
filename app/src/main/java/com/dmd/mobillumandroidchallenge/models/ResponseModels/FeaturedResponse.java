@@ -5,18 +5,18 @@ import com.dmd.mobillumandroidchallenge.models.Featured;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class FeaturedResponse extends BaseResponseObject {
-    public List<Featured> getFeatured() {
+    public ArrayList<Featured> getFeatured() {
         return featured;
     }
 
-    public void setFeatured(List<Featured> featured) {
+    public void setFeatured(ArrayList<Featured> featured) {
         this.featured = featured;
     }
 
     @SerializedName("featured")
     @Expose
-    private List<Featured> featured;
+    private ArrayList<Featured> featured;
 }

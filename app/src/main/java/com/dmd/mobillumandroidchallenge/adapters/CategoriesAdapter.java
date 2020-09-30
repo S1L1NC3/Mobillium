@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dmd.mobillumandroidchallenge.R;
-import com.dmd.mobillumandroidchallenge.models.ResponseModels.CategoriesResponse;
+import com.dmd.mobillumandroidchallenge.models.Category;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder> {
-    private List<CategoriesResponse> mData;
+    private ArrayList<Category> mData;
     private LayoutInflater mInflater;
 
-    public CategoriesAdapter(List<CategoriesResponse> mData) {
+    public CategoriesAdapter(ArrayList<Category> mData) {
         this.mData = mData;
     }
 
@@ -32,24 +32,23 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
 
     @Override
     public void onBindViewHolder(@NonNull CategoriesViewHolder holder, int position) {
-        holder.txtCategoryName.setText("mert");
-        Picasso.get().load("https://d3fwvrpbsa6rxi.cloudfront.net/images/kadin-4337b90a-c39b-4efb-9f6d-9cb05e9ace6b.jpg")
-                .into(holder.imgCategory);
+        holder.txtCategoryName.setText(mData.get(position).getName());
+        Picasso.get().load(mData.get(position).getLogo().getUrl()).into(holder.imgNewProduct);
     }
 
     public static class CategoriesViewHolder extends RecyclerView.ViewHolder {
         TextView txtCategoryName;
-        ImageView imgCategory;
+        ImageView imgNewProduct;
 
         CategoriesViewHolder(View itemView) {
             super(itemView);
+            imgNewProduct = itemView.findViewById(R.id.imgCategory);
             txtCategoryName = itemView.findViewById(R.id.txtCategoryName);
-            imgCategory = itemView.findViewById(R.id.imgCategory);
         }
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return mData.size();
     }
 }
